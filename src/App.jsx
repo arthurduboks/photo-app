@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import "./index.css";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import { motion } from "framer-motion";
 
@@ -14,6 +14,9 @@ const App = () => {
   const [images, setImages] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
+  // Modal
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   // Fetch images with AXIOS
   const fetchImages = useCallback(async () => {
@@ -53,6 +56,12 @@ const App = () => {
   const handleSelect = (selection) => {
     searchInput.current.value = selection;
     resetSearch();
+  };
+
+  // Function to handle image click
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+    setShowModal(true);
   };
 
   return (
@@ -96,6 +105,7 @@ const App = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
+            onClick={() => handleImageClick(image)}
           >
             <img
               src={image.urls.small}
@@ -113,6 +123,21 @@ const App = () => {
           <Button onClick={() => setPage(page + 1)}>Next</Button>
         )}
       </div>
+      {/* Modal Component */}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Image Preview</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {selectedImage && (
+            <img
+              src={selectedImage.urls.regular} // Higher resolution image
+              alt={selectedImage.alt_description}
+              className="image-modal" // Apply the CSS class here
+            />
+          )}
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
