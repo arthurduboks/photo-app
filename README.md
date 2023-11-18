@@ -1,8 +1,8 @@
-# README.md for React Image Gallery Application 🖼️🌟
+# React x Vite Photo App 🖼️🌟
 
 ## Project Overview 📖
 
-This project is a React-based web application designed to display a stunning gallery of images fetched from the Unsplash API. It includes dynamic search capabilities, pagination, and smooth, engaging animations using Framer Motion.
+This project is a React-based (Vite) web application designed to display a stunning gallery of images fetched from the Unsplash API. It includes dynamic search capabilities, pagination, and smooth, engaging animations using Framer Motion.
 
 ## Features 🚀
 
@@ -12,7 +12,7 @@ This project is a React-based web application designed to display a stunning gal
 
 ## Tec Stack 🛠️
 
-- React (Hooks: useRef, useState, useEffect, useCallback) ⚛️
+- React + Vite (Hooks: useRef, useState, useEffect, useCallback) ⚛️
 - Axios for efficient API requests 🌐
 - React-Bootstrap for sleek UI components 💅
 - Framer Motion for fluid animations 🎞️
