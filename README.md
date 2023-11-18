@@ -2,7 +2,7 @@
 
 ## Project Overview 📖
 
-This project is a React-based (Vite) web application designed to display a stunning gallery of images fetched from the Unsplash API. It includes dynamic search capabilities, pagination, and smooth, engaging animations using Framer Motion.
+This project is a React-based (Vite) web application designed to display a stunning gallery of images fetched from the Unsplash API. It includes dynamic search capabilities, and smooth, engaging animations using Framer Motion.
 
 ## Features 🚀
 
